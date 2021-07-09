@@ -1,0 +1,13 @@
+{  
+  "id": "publicKeyModel1Id",
+  "type": "EcdsaSecp256k1VerificationKey2019",
+  "publicKeyJwk": {
+    "kty": "EC",
+    "crv": "secp256k1",
+    "x": "tXSKB_rubXS7sCjXqupVJEzTcW3MsjmEvq1YpXn96Zg",
+    "y": "dOicXqbjFxoGJ-K0-GJ1kHYJqic_D_OMuUwkQ7Ol6nk"
+  },
+  "purposes": [
+    "authentication", "keyAgreement"
+  ]
+}

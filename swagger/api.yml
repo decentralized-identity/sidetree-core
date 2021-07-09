@@ -1,0 +1,736 @@
+openapi: 3.0.0
+# Added by API Auto Mocking Plugin
+servers:
+  - description: SwaggerHub API Auto Mocking
+    url: https://virtserver.swaggerhub.com/sidetree/v1
+info:
+  description: This is an experimental Open API Specification for the Sidetree Protocol.
+  version: "1.0.0"
+  title: Sidetree REST API
+tags:
+  - name: Sidetree
+    description: APIs for interacting with the Sidetree Node.
+  - name: Anchor
+    description: APIs for interacting with the Anchor system.
+  - name: Content Addressed Storage
+    description: APIs for interacting with the CAS system.
+paths:
+  /operations:
+    post:
+      tags:
+        - Sidetree
+      summary: Writes an Operation to Sidetree.
+      operationId: writeSidetreeOperation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              oneOf:
+                - $ref: '#/components/schemas/SidetreeCreateOperation'
+                - $ref: '#/components/schemas/SidetreeUpdateOperation'
+                - $ref: '#/components/schemas/SidetreeRecoverOperation'
+                - $ref: '#/components/schemas/SidetreeDeactivateOperation'
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+        '500':
+          description: Server Error
+  /identifiers/{did-with-or-without-initial-state}:
+    get:
+      tags:
+        - Sidetree
+      summary: Resolve a Sidetree DID.
+      operationId: resolveSidetreeDID
+      parameters:
+        - in: path
+          required: true
+          name: did-with-or-without-initial-state
+          schema:
+            type: string
+          description: A DID to resolve
+          example: "did:sidetree:EiAC2jrPmjaLI4xMiHTGWaKK29HmU9USFWA22lYc6CV0Bg?-sidetree-initial-state=eyJ0eXBlIjoiY3JlYXRlIiwic3VmZml4RGF0YSI6ImV5SnZjR1Z5WVhScGIyNUVZWFJoU0dGemFDSTZJa1ZwUW13Mk9IUktSRFp3YmxadVdHWTFURUZqY1VGWWJsRkhOR2syY2xKSGVuUmZlazEzYXpkaFZWUTBlVUVpTENKeVpXTnZkbVZ5ZVV0bGVTSTZleUp3ZFdKc2FXTkxaWGxJWlhnaU9pSXdNalE0WkRWaFlUbGxZamxqWVdZNE5EWmhNalZoTkRReE1qbGlPR013TURBek9HUTFObVJsTlROaVptTTNZbUU1TkRneU1tRTFNV1ZpTUdabU1EazNNbU1pZlN3aWJtVjRkRkpsWTI5MlpYSjVUM1J3U0dGemFDSTZJa1ZwUTI5aU5YZFZkMEV5U0VObVRGUjZjbmRHZG14b2JVSm5TRnB0ZEVsZmRXVXhNa1JuWHpsVlkxOXdlR2NpZlEiLCJvcGVyYXRpb25EYXRhIjoiZXlKdVpYaDBWWEJrWVhSbFQzUndTR0Z6YUNJNklrVnBSSEZMVDJ0ZlRsZHVZMkZrT0RJelYySm9WVGwyZUVwcmQwVnVTVFZHUlVNeU0xbDViRE5rUlZnNWJtY2lMQ0prYjJOMWJXVnVkQ0k2ZXlKQVkyOXVkR1Y0ZENJNkltaDBkSEJ6T2k4dmR6TnBaQzV2Y21jdlpHbGtMM1l4SWl3aWNIVmliR2xqUzJWNUlqcGJleUpwWkNJNklpTnphV2R1YVc1blMyVjVJaXdpZEhsd1pTSTZJbE5sWTNBeU5UWnJNVlpsY21sbWFXTmhkR2x2Ymt0bGVUSXdNVGdpTENKMWMyRm5aU0k2SW5OcFoyNXBibWNpTENKd2RXSnNhV05MWlhsSVpYZ2lPaUl3TTJKa01HVTBOREF3TlRKaU9UUXlaVE13T0dJNVptUXdPR1JpTWpsaFltTTRaRFl6TmpZNE5ESXpNMkZsT0Raa09Ea3lZVEk1WmpCak5qRTJabVV3TldVaWZWMHNJbk5sY25acFkyVWlPbHQ3SW1sa0lqb2lTV1JsYm5ScGRIbElkV0lpTENKMGVYQmxJam9pU1dSbGJuUnBkSGxJZFdJaUxDSnpaWEoyYVdObFJXNWtjRzlwYm5RaU9uc2lRR052Ym5SbGVIUWlPaUp6WTJobGJXRXVhV1JsYm5ScGRIa3VabTkxYm1SaGRHbHZiaTlvZFdJaUxDSkFkSGx3WlNJNklsVnpaWEpUWlhKMmFXTmxSVzVrY0c5cGJuUWlMQ0pwYm5OMFlXNWpaWE1pT2xzaVpHbGtPbk5wWkdWMGNtVmxPblpoYkhWbE1DSmRmWDFkZlgwIn0"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+        '410':
+          description: DID is deactivated
+        '500':
+          description: Server Error
+  /version:
+    get:
+      tags:
+        - Sidetree
+      operationId: getVersion
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Version'
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+        '500':
+          description: Server Error        
+
+  /anchor/time:
+    get:
+      tags:
+        - Anchor
+      summary: Gets the latest logical anchor time. This API allows the Observer and Batch Writer to determine protocol version to be used.
+      operationId: getTime
+      description: A anchor time hash must not be predictable/pre-computable, a canonical implementation would be to use the block number as the time and the block hash as the time hash. It is intentional that the concepts related to anchor blocks are hidden from the layers above.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AnchorTimeResponse'
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+        '500':
+          description: Server Error
+  /anchor/time/{time-hash}:
+    get:
+      tags:
+        - Anchor
+      summary: Gets the latest logical anchor time. This API allows the Observer and Batch Writer to determine protocol version to be used.
+      operationId: getTimeByHash
+      description: A anchor time hash must not be predictable/pre-computable, a canonical implementation would be to use the block number as the time and the block hash as the time hash. It is intentional that the concepts related to anchor blocks are hidden from the layers above.
+      parameters:
+        - in: path
+          required: true
+          name: time-hash
+          schema:
+            type: string
+          description: The hash associated with the anchor time
+          example: "0000000000000000001bfd6c48a6c3e81902cac688e12c2d87ca3aca50e03fb5"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AnchorTimeResponse'
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+        '500':
+          description: Server Error
+  /anchor/transactions:
+    get:
+      tags:
+        - Anchor
+      summary: Fetches Sidetree transactions in chronological order.
+      operationId: getTransactions
+      description: "Note: The call may not return all Sidetree transactions in one batch, in which case the caller can use the transaction number of the last transaction in the returned batch to fetch subsequent transactions."
+      parameters:
+        - in: query
+          required: false
+          name: since
+          schema:
+            type: string
+          description: A transaction number. When not given, all Sidetree transactions since inception will be returned. When given, only Sidetree transactions after the specified transaction will be returned.
+          example: "170"
+        - in: query
+          required: false
+          name: transaction-time-hash
+          schema:
+            type: string
+          description: MUST BE given if since parameter is specified. This is the hash associated with the time the transaction specified by the since parameter is anchored on anchor. Multiple transactions can have the same transaction time and thus the same transaction time hash. The transaction time hash helps the anchor layer detect block reorganizations (temporary forks); HTTP 400 Bad Request with invalid_transaction_number_or_time_hash as the code parameter value in a JSON body is returned on such events.
+          example: "00000000000000000000100158f474719e5a319933856f7f464fcc65a3cb2253"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AnchorTransactions'
+        '400':
+          description: >
+            Bad Request
+              * `invalid_transaction_number_or_time_hash`
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+                example: {
+                  "code": "invalid_transaction_number_or_time_hash"
+                }
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+        '500':
+          description: Server Error
+    post:
+      tags:
+        - Anchor
+      summary: Writes a Sidetree transaction to the underlying anchor.
+      operationId: writeAnchorTransaction
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AnchorWriteRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AnchorTransaction'
+        '400':
+          description: >
+            Bad Request
+              * `spending_cap_per_period_reached` - If with the given fee (derived from minimumFee) this node will exceed the spending limit as configured in the parameters.
+              * `not_enough_balace_for_write` - If the wallet configured in the parameters does not have enough balance to complete the write operation.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+        '500':
+          description: >
+            Server Error
+              * `normalized_fee_cannot_be_computed` - Error while computing the normalized fee.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /anchor/transactions/first-valid:
+    post:
+      tags:
+        - Anchor
+      summary: Get first valid Sidetree transaction
+      operationId: getFirstValidTransactions
+      description: Given a list of Sidetree transactions, returns the first transaction in the list that is valid. Returns 404 NOT FOUND if none of the given transactions are valid. This API is primarily used by the Sidetree core library to determine a transaction that can be used as a marker in time to reprocess transactions in the event of a block reorganization (temporary fork).
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/AnchorTransaction'
+              example: [
+                {
+                  "transaction_number": 19,
+                  "transaction_time": 545236,
+                  "transaction_time_hash": "0000000000000000002352597f8ec45c56ad19994808e982f5868c5ff6cfef2e",
+                  "anchor_string": "Qm28BKV9iiM1ZNzMsi3HbDRHDPK5U2DEhKpCYhKk83UPEg",
+                  "transaction_fee_paid": 5000,
+                  "normalized_transaction_fee": 100,
+                  "writer": "0af7eccefa3aaa37421914923b4a2034ed5a0ad0"
+                },
+                {
+                  "transaction_number": 18,
+                  "transaction_time": 545236,
+                  "transaction_time_hash": "0000000000000000000054f9719ef6ca646e2503a9c5caac1c6ea95ffb4af587",
+                  "anchor_string": "Qmb2wxUwvEpspKXU4QNxwYQLGS2gfsAuAE9LPcn5LprS1nb",
+                  "transaction_fee_paid": 30,
+                  "normalized_transaction_fee": 10,
+                  "writer": "0af7eccefa3aaa37421782523b4a2034ed5a0ad0"
+                },
+                {
+                  "transaction_number": 16,
+                  "transaction_time": 545200,
+                  "transaction_time_hash": "0000000000000000000f32c84291a3305ad9e5e162d8cc363420831ecd0e2800",
+                  "anchor_string": "QmbBPdjWSdJoQGHbZDvPqHxWqqeKUdzBwMTMjJGeWyUkEzK",
+                  "transaction_fee_paid": 50000,
+                  "normalized_transaction_fee": 150,
+                  "writer": "0af7eccefa3aaa87421782523b4a2034ed5a0ad0"
+                }
+              ]
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AnchorTransaction'
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+        '500':
+          description: Server Error
+  /anchor/fee:
+    get:
+      tags:
+        - Anchor
+      summary: Fetches the normalized transaction fee used for proof-of-fee calculation, given the anchor time.
+      operationId: getFee
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AnchorFeeResponse'
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+        '500':
+          description: Server Error
+  /anchor/locks/{lock-identifier}:
+    get:
+      tags:
+        - Anchor
+      summary: Fetches the lock object used for value-time-lock calculation, given the lock identifier.
+      operationId: getLock
+      parameters:
+        - in: path
+          required: true
+          name: lock-identifier
+          schema:
+            type: string
+          example: "gHasdfasodf23230o0jlk23323"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AnchorLock'
+        '400':
+          description: >
+            Bad Request
+              * `anchor_time_out_of_range` - Anchor time given is out of computable range.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: Unauthorized
+        '404':
+          description: >
+            Not Found
+              * `value_time_lock_not_found` - Lock not found.
+              * `value_time_lock_in_pending_state` - If there is a lock but is not confirmed on the anchor yet.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: >
+            Server Error
+              * `normalized_fee_cannot_be_computed` - Error while computing the normalized fee.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /anchor/writer-lock:
+    get:
+      tags:
+        - Anchor
+      operationId: getWriterLock
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AnchorLock'
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: >
+            Not Found
+              * `value_time_lock_not_found` - Lock not found.
+              * `value_time_lock_in_pending_state` - If there is a lock but is not confirmed on the anchor yet.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Server Error
+  /anchor/version:
+    get:
+      tags:
+        - Anchor
+      operationId: getAnchorVersion
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Version'
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+        '500':
+          description: Server Error
+
+  /cas/version:
+      get:
+        tags:
+          - Content Addressed Storage
+        operationId: getCASVersion
+        responses:
+          '200':
+            description: Success
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/Version'
+          '400':
+            description: Bad Request
+          '401':
+            description: Unauthorized
+          '404':
+            description: Not Found
+          '500':
+            description: Server Error
+  /cas/{hash}:
+    get:
+      tags:
+        - Content Addressed Storage
+      operationId: readContent
+      parameters:
+        - in: path
+          required: true
+          name: hash
+          schema:
+            type: string
+          example: "QmWd5PH6vyRH5kMdzZRPBnf952dbR4av3Bd7B2wBqMaAcf"
+        - in: query
+          required: true
+          name: max-size
+          schema:
+            type: string
+          description: If the content exceeds the specified maximum allowed size, HTTP 400 Bad Request with content_exceeds_maximum_allowed_size as the value for the code parameter in a JSON body is returned.
+          example: "170"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                format: binary
+          
+        '400':
+          description: >
+            Bad Request
+              * `content_exceeds_maximum_allowed_size` - Content exceeds maximum allowed size
+              * `content_not_a_file` - Content not a file
+              * `content_hash_invalid` - Content hash is invalid
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+        '500':
+          description: Server Error
+  /cas:
+    post:
+      tags:
+        - Content Addressed Storage
+      operationId: writeContent
+      requestBody:
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CASWriteResponse'
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '500':
+          description: Server Error
+          
+components:
+  schemas:
+    Version:
+      type: object
+      properties:
+        name: 
+          type: string
+          description: A string representing the name of the service.
+        version: 
+          type: string
+          description: A string representing the version of currently running service.
+      example: {
+        "name": "bitcoin",
+        "version": "1.0.0"
+      }
+    SidetreeCreateOperation:
+      type: object
+      properties:
+        type:
+          type: string
+          enum: [create]
+          example: "create"
+        suffix_data:
+          type: string
+          description: The Base64URL encoded Suffix Data Object.
+        delta:
+          type: string
+          description: The Base64URL encoded Create Operation Data Object.
+      description: Create operation.
+    SidetreeUpdateOperation:
+      type: object
+      properties:
+        type:
+          type: string
+          enum: [update]
+          example: "update"
+        did_suffix:
+          type: string
+          description: The unique identifier string within a DID URI.
+        update_reveal_value:
+          type: string
+          description: The last update commitment value.
+        delta:
+          type: string
+          description: The Base64URL encoded Update Operation Data Object.
+        signed_data:
+          type: string
+          description: The JWS object as defined in Map File for Update operations.
+      description: Update operation.
+    SidetreeRecoverOperation:
+      type: object
+      properties:
+        type:
+          type: string
+          enum: [recover]
+          description: Recover operation.
+          example: "recover"
+        did_suffix:
+          type: string
+          description: The unique identifier string within a DID URI.
+        recovery_reveal_value:
+          type: string
+          description: The last recovery commitment value.
+        delta:
+          type: string
+          description: The Base64URL encoded Recover Operation Data Object.
+        signed_data:
+          type: string
+          description: The JWS object as defined in Anchor File for Recovery operations.
+      description: Recover operation.
+    SidetreeDeactivateOperation:
+      type: object
+      properties:
+        type:
+          type: string
+          enum: [deactivate]
+          example: "deactivate"
+        did_suffix:
+          type: string
+          description: The unique identifier string within a DID URI.
+        recovery_reveal_value:
+          type: string
+          description: The last recovery commitment value.
+        signed_data:
+          type: string
+          description: The JWS object as defined in Anchor File for Deactivate operations.
+      description: Deactivate operation.
+    AnchorTransaction:
+      type: object
+      properties:
+        transaction_number:
+          type: number
+          description: A monotonically increasing number (need NOT be by 1) that identifies a Sidtree transaction.
+        transaction_time:
+          type: number
+          description: The logical anchor time this transaction is anchored. Used for protocol version selection.
+        transaction_time_hash:
+          type: string
+          description: The hash associated with the transaction time.
+        anchor_string:
+          type: string
+          description: The string written to the anchor for this transaction.
+        transaction_fee_paid:
+          type: string
+          description: A number representing the fee paid for this transaction.
+        normalized_transaction_fee:
+          type: string
+          description: A number representing the normalized transaction fee used for proof-of-fee calculation.
+        writer:
+          type: string
+          description: A string representing the writer of the transaction. Used in the value time lock calculations.
+      example: {
+        "transaction_number": 89,
+        "transaction_time": 545236,
+        "transaction_time_hash": "0000000000000000002352597f8ec45c56ad19994808e982f5868c5ff6cfef2e",
+        "anchor_string": "QmWd5PH6vyRH5kMdzZRPBnf952dbR4av3Bd7B2wBqMaAcf",
+        "transaction_fee_paid": 40000,
+        "normalized_transaction_fee": 100,
+        "writer": "0af7eccefa3aaa37421914923b4a2034ed5a0ad0"
+      }
+    CASWriteResponse:
+      type: object
+      properties:
+        hash:
+          type: string
+          description: Hash of data written to CAS
+          example: "QmWd5PH6vyRH5kMdzZRPBnf952dbR4av3Bd7B2wBqMaAcf"
+    AnchorTimeResponse:
+      type: object
+      properties:
+        time:
+          type: string
+          description: The logical anchor time.
+          example: "545236"
+        hash:
+          type: string
+          description: The hash associated with the anchor time.
+          example: "0000000000000000002443210198839565f8d40a6b897beac8669cf7ba629051"
+        previous_hash:
+          type: string
+          description: The hash associated with the previous anchor time.
+          example: "0000000000000000002443210198839565f8d40a6b897beac8669cf7ba629051"
+    AnchorTransactions:
+      type: object
+      properties:
+        more_transactions:
+          type: boolean
+          description: True if there are more transactions beyond the returned batch. False otherwise.
+          example: false
+        transactions:
+          type: array
+          items:
+            $ref: '#/components/schemas/AnchorTransaction'
+          description: The transactions array must always end with a complete block of data, but can start in the middle of a block if since query parameter is provided.
+      example: {
+        "more_transactions": false,
+        "transactions": [
+          {
+            "transaction_number": 89,
+            "transaction_time": 545236,
+            "transaction_time_hash": "0000000000000000002352597f8ec45c56ad19994808e982f5868c5ff6cfef2e",
+            "anchor_string": "QmWd5PH6vyRH5kMdzZRPBnf952dbR4av3Bd7B2wBqMaAcf",
+            "transaction_fee_paid": 40000,
+            "normalized_transaction_fee": 100,
+            "writer": "0af7eccefa3aaa37421914923b4a2034ed5a0ad0"
+          },
+          {
+            "transaction_number": 100,
+            "transaction_time": 545236,
+            "transaction_time_hash": "00000000000000000000100158f474719e5a319933856f7f464fcc65a3cb2253",
+            "anchor_string": "QmbJGU4wNti6vNMGMosXaHbeMHGu9PkAUZtVBb2s2Vyq5d",
+            "transaction_fee_paid": 600000,
+            "normalized_transaction_fee": 400,
+            "writer": "0af7eccefa3aaa37421782523b4a2034ed5a0ad0"
+          }
+        ]
+      }
+    AnchorWriteRequest:
+      type: object
+      description: if with the given fee (derived from minimumFee) this node will exceed the spending limit as configured in the parameters.
+      properties:
+        anchor_string:
+          type: string
+          description: The string to be written to the anchor for this transaction.
+        minimum_fee:
+          type: string
+          description: A number representing the minimum transaction fee to be paid to write this transaction to the anchor. The actual fee is dynamically calculated and can be higher than this amount (but not lower).
+      example: {
+        "minimum_fee": 200000,
+        "anchor_string": "QmbJGU4wNti6vNMGMosXaHbeMHGu9PkAUZtVBb2s2Vyq5d"
+      }
+    AnchorFeeResponse:
+      type: object
+      properties:
+        normalized_transaction_fee:
+          type: string
+          description: A number representing the normalized transaction fee used for proof-of-fee calculation.
+      example: {
+        "normalized_transaction_fee": 200000
+      }
+    AnchorLock:
+      type: object
+      properties:
+        amount_locked:
+          type: number
+          description: A number representing the amount that was locked.
+        identifier:
+          type: number
+          description: The string representing the identifier of the lock. This is the same value which is passed in the request path.
+        lock_transaction_time:
+          type: number
+          description: A number representing the transaction time at which the lock became active.
+        owner:
+          type: string
+          description: A string reprsenting the owner of the lock.
+        unlock_transaction_time:
+          type: string
+          description: A number representing the transaction time at which the lock became inactive.
+      example: {
+        "amount_locked": 1235696,
+        "identifier": "gHasdfasodf23230o0jlk23323",
+        "lock_transaction_time": 167520,
+        "owner": "Hhdofkeio209aanoiyyoiknadfsedsed652",
+        "unlock_transaction_time": 167530
+      }
+    ErrorResponse:
+      type: object
+      properties:
+        code:
+          type: string
+          enum: 
+          - content_exceeds_maximum_allowed_size
+          - content_not_a_file
+          - content_hash_invalid
+          - value_time_lock_not_found
+          - value_time_lock_in_pending_state
+          - normalized_fee_cannot_be_computed
+          - anchor_time_out_of_range
+          - spending_cap_per_period_reached
+          - not_enough_balace_for_write
+          - invalid_transaction_number_or_time_hash
+         

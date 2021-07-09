@@ -1,0 +1,17 @@
+{
+  "@context": "https://w3id.org/did-resolution/v1",
+  "didDocument": { 
+    "id": "did:sidetree:EiDyOQbbZAa3aiRzeCkV7LOx3SERjjH93EXoIM3UoN4oWg", 
+    "@context": [ 
+      "https://www.w3.org/ns/did/v1", 
+      { "@base": "did:sidetree:EiDyOQbbZAa3aiRzeCkV7LOx3SERjjH93EXoIM3UoN4oWg" }
+    ] 
+  },
+  "didDocumentMetadata": {
+    "deactivated": true,
+    "method": {
+      "published": true
+    },
+    "canonicalId": "did:sidetree:EiDyOQbbZAa3aiRzeCkV7LOx3SERjjH93EXoIM3UoN4oWg"
+  }
+}

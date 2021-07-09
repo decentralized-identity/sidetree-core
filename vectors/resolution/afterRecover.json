@@ -1,0 +1,55 @@
+{
+  "@context": "https://w3id.org/did-resolution/v1",
+  "didDocument": {
+    "id": "did:sidetree:EiDyOQbbZAa3aiRzeCkV7LOx3SERjjH93EXoIM3UoN4oWg",
+    "@context": [
+      "https://www.w3.org/ns/did/v1",
+      {
+        "@base": "did:sidetree:EiDyOQbbZAa3aiRzeCkV7LOx3SERjjH93EXoIM3UoN4oWg"
+      }
+    ],
+    "service": [
+      {
+        "id": "#serviceId123",
+        "type": "someType",
+        "serviceEndpoint": "https://www.url.com"
+      }
+    ],
+    "verificationMethod": [
+      {
+        "id": "#newKey",
+        "controller": "did:sidetree:EiDyOQbbZAa3aiRzeCkV7LOx3SERjjH93EXoIM3UoN4oWg",
+        "type": "EcdsaSecp256k1VerificationKey2019",
+        "publicKeyJwk": {
+          "kty": "EC",
+          "crv": "secp256k1",
+          "x": "JUWp0pAMGevNLhqq_Qmd48izuLYfO5XWpjSmy5btkjc",
+          "y": "QYaSu1NHYnxR4qfk-RkXb4NQnQf1X3XQCpDYuibvlNc"
+        }
+      }
+    ],
+    "authentication": [
+      "#newKey"
+    ],
+    "assertionMethod": [
+      "#newKey"
+    ],
+    "capabilityInvocation": [
+      "#newKey"
+    ],
+    "capabilityDelegation": [
+      "#newKey"
+    ],
+    "keyAgreement": [
+      "#newKey"
+    ]
+  },
+  "didDocumentMetadata": {
+    "canonicalId": "did:sidetree:EiDyOQbbZAa3aiRzeCkV7LOx3SERjjH93EXoIM3UoN4oWg",
+    "method": {
+      "published": true,
+      "recoveryCommitment": "EiCsA7SGLNeda5InloqnokUcJFz6vKT4HS5dcKrmnlJhpA",
+      "updateCommitment": "EiD6_csybTfxELBoMgkE9O2BTCmhScG_RW_qaZQkIkJ_aQ"
+    }
+  }
+}

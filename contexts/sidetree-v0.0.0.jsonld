@@ -1,0 +1,24 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "did-core-registries": "https://w3c.github.io/did-core-registries/#",
+    "sidetree": "https://identity.foundation/sidetree/spec/#",
+    "ldssk": "https://w3c-ccg.github.io/lds-jws2020/contexts/#",
+    "publicKeyHex": "did-core-registries:publicKeyHex",
+    "recovery": {
+      "@id": "sidetree:recovery",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "operation": {
+      "@id": "sidetree:operation",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "usage": "sidetree:usage",
+    "JsonWebKey2020": {
+      "@id":"ldssk:JsonWebKey2020",
+      "@type": "@json"
+    }
+  }
+}

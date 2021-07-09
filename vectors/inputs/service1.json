@@ -1,0 +1,5 @@
+{
+  "id": "service1Id",
+  "type": "service1Type",
+  "serviceEndpoint": "http://www.service1.com"
+}

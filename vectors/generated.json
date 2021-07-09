@@ -1,0 +1,344 @@
+{
+  "create": {
+    "longFormDid": "did:sidetree:EiDyOQbbZAa3aiRzeCkV7LOx3SERjjH93EXoIM3UoN4oWg:eyJkZWx0YSI6eyJwYXRjaGVzIjpbeyJhY3Rpb24iOiJyZXBsYWNlIiwiZG9jdW1lbnQiOnsicHVibGljS2V5cyI6W3siaWQiOiJwdWJsaWNLZXlNb2RlbDFJZCIsInB1YmxpY0tleUp3ayI6eyJjcnYiOiJzZWNwMjU2azEiLCJrdHkiOiJFQyIsIngiOiJ0WFNLQl9ydWJYUzdzQ2pYcXVwVkpFelRjVzNNc2ptRXZxMVlwWG45NlpnIiwieSI6ImRPaWNYcWJqRnhvR0otSzAtR0oxa0hZSnFpY19EX09NdVV3a1E3T2w2bmsifSwicHVycG9zZXMiOlsiYXV0aGVudGljYXRpb24iLCJrZXlBZ3JlZW1lbnQiXSwidHlwZSI6IkVjZHNhU2VjcDI1NmsxVmVyaWZpY2F0aW9uS2V5MjAxOSJ9XSwic2VydmljZXMiOlt7ImlkIjoic2VydmljZTFJZCIsInNlcnZpY2VFbmRwb2ludCI6Imh0dHA6Ly93d3cuc2VydmljZTEuY29tIiwidHlwZSI6InNlcnZpY2UxVHlwZSJ9XX19XSwidXBkYXRlQ29tbWl0bWVudCI6IkVpREtJa3dxTzY5SVBHM3BPbEhrZGI4Nm5ZdDBhTnhTSFp1MnItYmhFem5qZEEifSwic3VmZml4RGF0YSI6eyJkZWx0YUhhc2giOiJFaUNmRFdSbllsY0Q5RUdBM2RfNVoxQUh1LWlZcU1iSjluZmlxZHo1UzhWRGJnIiwicmVjb3ZlcnlDb21taXRtZW50IjoiRWlCZk9aZE10VTZPQnc4UGs4NzlRdFotMkotOUZiYmpTWnlvYUFfYnFENHpoQSJ9fQ",
+    "shortFormDid": "did:sidetree:EiDyOQbbZAa3aiRzeCkV7LOx3SERjjH93EXoIM3UoN4oWg",
+    "didUniqueSuffix": "EiDyOQbbZAa3aiRzeCkV7LOx3SERjjH93EXoIM3UoN4oWg",
+    "operationRequest": {
+      "type": "create",
+      "suffixData": {
+        "deltaHash": "EiCfDWRnYlcD9EGA3d_5Z1AHu-iYqMbJ9nfiqdz5S8VDbg",
+        "recoveryCommitment": "EiBfOZdMtU6OBw8Pk879QtZ-2J-9FbbjSZyoaA_bqD4zhA"
+      },
+      "delta": {
+        "updateCommitment": "EiDKIkwqO69IPG3pOlHkdb86nYt0aNxSHZu2r-bhEznjdA",
+        "patches": [
+          {
+            "action": "replace",
+            "document": {
+              "publicKeys": [
+                {
+                  "id": "publicKeyModel1Id",
+                  "type": "EcdsaSecp256k1VerificationKey2019",
+                  "publicKeyJwk": {
+                    "kty": "EC",
+                    "crv": "secp256k1",
+                    "x": "tXSKB_rubXS7sCjXqupVJEzTcW3MsjmEvq1YpXn96Zg",
+                    "y": "dOicXqbjFxoGJ-K0-GJ1kHYJqic_D_OMuUwkQ7Ol6nk"
+                  },
+                  "purposes": [
+                    "authentication",
+                    "keyAgreement"
+                  ]
+                }
+              ],
+              "services": [
+                {
+                  "id": "service1Id",
+                  "type": "service1Type",
+                  "serviceEndpoint": "http://www.service1.com"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  },
+  "update": {
+    "updateOperation": {
+      "type": "update",
+      "didUniqueSuffix": "EiDyOQbbZAa3aiRzeCkV7LOx3SERjjH93EXoIM3UoN4oWg",
+      "signedDataJws": {
+        "protected": "eyJhbGciOiJFUzI1NksifQ",
+        "payload": "eyJ1cGRhdGVLZXkiOnsia3R5IjoiRUMiLCJjcnYiOiJzZWNwMjU2azEiLCJ4Ijoid2Z3UUNKM09ScVZkbkhYa1Q4UC1MZ19HdHhCRWhYM3R5OU5VbnduSHJtdyIsInkiOiJ1aWU4cUxfVnVBblJEZHVwaFp1eExPNnFUOWtQcDNLUkdFSVJsVHBXcmZVIn0sImRlbHRhSGFzaCI6IkVpQ3BqTjQ3ZjBNcTZ4RE5VS240aFNlZ01FcW9EU19ycFEyOVd5MVY3M1ZEYncifQ",
+        "signature": "RwZK1DG5zcr4EsrRImzStb0VX5j2ZqApXZnuoAkA3IoRdErUscNG8RuxNZ0FjlJtjMJ0a-kn-_MdtR0wwvWVgg"
+      },
+      "signedData": {
+        "updateKey": {
+          "kty": "EC",
+          "crv": "secp256k1",
+          "x": "wfwQCJ3ORqVdnHXkT8P-Lg_GtxBEhX3ty9NUnwnHrmw",
+          "y": "uie8qL_VuAnRDduphZuxLO6qT9kPp3KRGEIRlTpWrfU"
+        },
+        "deltaHash": "EiCpjN47f0Mq6xDNUKn4hSegMEqoDS_rpQ29Wy1V73VDbw"
+      },
+      "delta": {
+        "patches": [
+          {
+            "action": "add-public-keys",
+            "publicKeys": [
+              {
+                "id": "additional-key",
+                "type": "EcdsaSecp256k1VerificationKey2019",
+                "publicKeyJwk": {
+                  "kty": "EC",
+                  "crv": "secp256k1",
+                  "x": "aN75CTjy3VCgGAJDNJHbcb55hO8CobEKzgCNrUeOwAY",
+                  "y": "K9FhCEpa_jG09pB6qriXrgSvKzXm6xtxBvZzIoXXWm4"
+                },
+                "purposes": [
+                  "authentication",
+                  "assertionMethod",
+                  "capabilityInvocation",
+                  "capabilityDelegation",
+                  "keyAgreement"
+                ]
+              }
+            ]
+          }
+        ],
+        "updateCommitment": "EiDOrcmPtfMHuwIWN6YoihdeIPxOKDHy3D6sdMXu_7CN0w"
+      }
+    },
+    "additionalKeyId": "additional-key",
+    "additionalPublicKey": {
+      "id": "additional-key",
+      "type": "EcdsaSecp256k1VerificationKey2019",
+      "publicKeyJwk": {
+        "kty": "EC",
+        "crv": "secp256k1",
+        "x": "aN75CTjy3VCgGAJDNJHbcb55hO8CobEKzgCNrUeOwAY",
+        "y": "K9FhCEpa_jG09pB6qriXrgSvKzXm6xtxBvZzIoXXWm4"
+      },
+      "purposes": [
+        "authentication",
+        "assertionMethod",
+        "capabilityInvocation",
+        "capabilityDelegation",
+        "keyAgreement"
+      ]
+    },
+    "additionalPrivateKey": {
+      "d": "SGPE-rvJizuVQd2_dnRTLdOfQfrIid9Rl-s685Mh4PU",
+      "kty": "EC",
+      "crv": "secp256k1",
+      "x": "aN75CTjy3VCgGAJDNJHbcb55hO8CobEKzgCNrUeOwAY",
+      "y": "K9FhCEpa_jG09pB6qriXrgSvKzXm6xtxBvZzIoXXWm4"
+    },
+    "nextUpdateKey": {
+      "kty": "EC",
+      "crv": "secp256k1",
+      "x": "aN75CTjy3VCgGAJDNJHbcb55hO8CobEKzgCNrUeOwAY",
+      "y": "K9FhCEpa_jG09pB6qriXrgSvKzXm6xtxBvZzIoXXWm4"
+    },
+    "operationRequest": {
+      "type": "update",
+      "didSuffix": "EiDyOQbbZAa3aiRzeCkV7LOx3SERjjH93EXoIM3UoN4oWg",
+      "revealValue": "EiBkRSeixqX-PhOij6PIpuGfPld5Nif5MxcrgtGCw-t6LA",
+      "delta": {
+        "patches": [
+          {
+            "action": "add-public-keys",
+            "publicKeys": [
+              {
+                "id": "additional-key",
+                "type": "EcdsaSecp256k1VerificationKey2019",
+                "publicKeyJwk": {
+                  "kty": "EC",
+                  "crv": "secp256k1",
+                  "x": "aN75CTjy3VCgGAJDNJHbcb55hO8CobEKzgCNrUeOwAY",
+                  "y": "K9FhCEpa_jG09pB6qriXrgSvKzXm6xtxBvZzIoXXWm4"
+                },
+                "purposes": [
+                  "authentication",
+                  "assertionMethod",
+                  "capabilityInvocation",
+                  "capabilityDelegation",
+                  "keyAgreement"
+                ]
+              }
+            ]
+          }
+        ],
+        "updateCommitment": "EiDOrcmPtfMHuwIWN6YoihdeIPxOKDHy3D6sdMXu_7CN0w"
+      },
+      "signedData": "eyJhbGciOiJFUzI1NksifQ.eyJ1cGRhdGVLZXkiOnsia3R5IjoiRUMiLCJjcnYiOiJzZWNwMjU2azEiLCJ4Ijoid2Z3UUNKM09ScVZkbkhYa1Q4UC1MZ19HdHhCRWhYM3R5OU5VbnduSHJtdyIsInkiOiJ1aWU4cUxfVnVBblJEZHVwaFp1eExPNnFUOWtQcDNLUkdFSVJsVHBXcmZVIn0sImRlbHRhSGFzaCI6IkVpQ3BqTjQ3ZjBNcTZ4RE5VS240aFNlZ01FcW9EU19ycFEyOVd5MVY3M1ZEYncifQ.RwZK1DG5zcr4EsrRImzStb0VX5j2ZqApXZnuoAkA3IoRdErUscNG8RuxNZ0FjlJtjMJ0a-kn-_MdtR0wwvWVgg"
+    }
+  },
+  "recover": {
+    "recoverOperation": {
+      "type": "recover",
+      "didUniqueSuffix": "EiDyOQbbZAa3aiRzeCkV7LOx3SERjjH93EXoIM3UoN4oWg",
+      "signedDataJws": {
+        "protected": "eyJhbGciOiJFUzI1NksifQ",
+        "payload": "eyJkZWx0YUhhc2giOiJFaUNTem1ZSk0yWGpaWE00a1Q0bGpKcEVGTjVmVkM1QVNWZ3hSekVtMEF2OWp3IiwicmVjb3ZlcnlLZXkiOnsia3R5IjoiRUMiLCJjcnYiOiJzZWNwMjU2azEiLCJ4IjoibklxbFJDeDBleUJTWGNRbnFEcFJlU3Y0enVXaHdDUldzc29jOUxfbmo2QSIsInkiOiJpRzI5Vks2bDJVNXNLQlpVU0plUHZ5RnVzWGdTbEsyZERGbFdhQ004RjdrIn0sInJlY292ZXJ5Q29tbWl0bWVudCI6IkVpQ3NBN1NHTE5lZGE1SW5sb3Fub2tVY0pGejZ2S1Q0SFM1ZGNLcm1ubEpocEEifQ",
+        "signature": "lxWnrg5jaeCAhYuz1fPhidKw6Z2cScNlEc6SWcs15DtJbrHZFxl5IezGJ3cWdOSS2DlzDl4M1ZF8dDE9kRwFeQ"
+      },
+      "signedData": {
+        "deltaHash": "EiCSzmYJM2XjZXM4kT4ljJpEFN5fVC5ASVgxRzEm0Av9jw",
+        "recoveryKey": {
+          "kty": "EC",
+          "crv": "secp256k1",
+          "x": "nIqlRCx0eyBSXcQnqDpReSv4zuWhwCRWssoc9L_nj6A",
+          "y": "iG29VK6l2U5sKBZUSJePvyFusXgSlK2dDFlWaCM8F7k"
+        },
+        "recoveryCommitment": "EiCsA7SGLNeda5InloqnokUcJFz6vKT4HS5dcKrmnlJhpA"
+      },
+      "delta": {
+        "patches": [
+          {
+            "action": "replace",
+            "document": {
+              "publicKeys": [
+                {
+                  "id": "newKey",
+                  "type": "EcdsaSecp256k1VerificationKey2019",
+                  "publicKeyJwk": {
+                    "kty": "EC",
+                    "crv": "secp256k1",
+                    "x": "JUWp0pAMGevNLhqq_Qmd48izuLYfO5XWpjSmy5btkjc",
+                    "y": "QYaSu1NHYnxR4qfk-RkXb4NQnQf1X3XQCpDYuibvlNc"
+                  },
+                  "purposes": [
+                    "authentication",
+                    "assertionMethod",
+                    "capabilityInvocation",
+                    "capabilityDelegation",
+                    "keyAgreement"
+                  ]
+                }
+              ],
+              "services": [
+                {
+                  "id": "serviceId123",
+                  "type": "someType",
+                  "serviceEndpoint": "https://www.url.com"
+                }
+              ]
+            }
+          }
+        ],
+        "updateCommitment": "EiD6_csybTfxELBoMgkE9O2BTCmhScG_RW_qaZQkIkJ_aQ"
+      }
+    },
+    "recoveryPublicKey": {
+      "kty": "EC",
+      "crv": "secp256k1",
+      "x": "JMnp_J9nAHadLjI6b_5U73UpHFjHFSTwmsVTPoEM5l0",
+      "y": "wsT1-stQboJWOxBrRuH4t0U_s_YRC-xYt2FADUCGGc8"
+    },
+    "recoveryPrivateKey": {
+      "d": "-TkJnaI62sK52gGh3TPfn7CMQ-gS-R4rztEt7uMBJRI",
+      "kty": "EC",
+      "crv": "secp256k1",
+      "x": "JMnp_J9nAHadLjI6b_5U73UpHFjHFSTwmsVTPoEM5l0",
+      "y": "wsT1-stQboJWOxBrRuH4t0U_s_YRC-xYt2FADUCGGc8"
+    },
+    "signingPublicKey": {
+      "id": "newSigningKey",
+      "type": "EcdsaSecp256k1VerificationKey2019",
+      "publicKeyJwk": {
+        "kty": "EC",
+        "crv": "secp256k1",
+        "x": "o6i1YC8pJgLeXAo65tbsDbOqlkugsEBdp0F20ztOMr8",
+        "y": "L0G_F5L6Gt603NFMFtFmWoG_gjVgxRw6ERJQxe8JNLs"
+      },
+      "purposes": [
+        "authentication",
+        "assertionMethod",
+        "capabilityInvocation",
+        "capabilityDelegation",
+        "keyAgreement"
+      ]
+    },
+    "signingPrivateKey": {
+      "d": "Den2vRSA74DDhNf0kSZWeMYt0oDbDfMJcp65lxRxvwI",
+      "kty": "EC",
+      "crv": "secp256k1",
+      "x": "o6i1YC8pJgLeXAo65tbsDbOqlkugsEBdp0F20ztOMr8",
+      "y": "L0G_F5L6Gt603NFMFtFmWoG_gjVgxRw6ERJQxe8JNLs"
+    },
+    "updateKey": {
+      "id": "updateKey",
+      "type": "EcdsaSecp256k1VerificationKey2019",
+      "publicKeyJwk": {
+        "kty": "EC",
+        "crv": "secp256k1",
+        "x": "X5swBhP16QQptKHcAiFns2d0NbtTI0kAPAGCNsJPSKM",
+        "y": "4GBy9Gs_KEoUTrRXqEDYiQQ7DlyWEaLQ8Ao4NX2R_CM"
+      },
+      "purposes": [
+        "authentication",
+        "assertionMethod",
+        "capabilityInvocation",
+        "capabilityDelegation",
+        "keyAgreement"
+      ]
+    },
+    "updatePrivateKey": {
+      "d": "O0h6mYKTP1PBy2CN7fI_7Ulsi9lgB6To5jEMdPbDMTA",
+      "kty": "EC",
+      "crv": "secp256k1",
+      "x": "X5swBhP16QQptKHcAiFns2d0NbtTI0kAPAGCNsJPSKM",
+      "y": "4GBy9Gs_KEoUTrRXqEDYiQQ7DlyWEaLQ8Ao4NX2R_CM"
+    },
+    "operationRequest": {
+      "type": "recover",
+      "didSuffix": "EiDyOQbbZAa3aiRzeCkV7LOx3SERjjH93EXoIM3UoN4oWg",
+      "revealValue": "EiAJ-97Is59is6FKAProwDo870nmwCeP8n5nRRFwPpUZVQ",
+      "signedData": "eyJhbGciOiJFUzI1NksifQ.eyJkZWx0YUhhc2giOiJFaUNTem1ZSk0yWGpaWE00a1Q0bGpKcEVGTjVmVkM1QVNWZ3hSekVtMEF2OWp3IiwicmVjb3ZlcnlLZXkiOnsia3R5IjoiRUMiLCJjcnYiOiJzZWNwMjU2azEiLCJ4IjoibklxbFJDeDBleUJTWGNRbnFEcFJlU3Y0enVXaHdDUldzc29jOUxfbmo2QSIsInkiOiJpRzI5Vks2bDJVNXNLQlpVU0plUHZ5RnVzWGdTbEsyZERGbFdhQ004RjdrIn0sInJlY292ZXJ5Q29tbWl0bWVudCI6IkVpQ3NBN1NHTE5lZGE1SW5sb3Fub2tVY0pGejZ2S1Q0SFM1ZGNLcm1ubEpocEEifQ.lxWnrg5jaeCAhYuz1fPhidKw6Z2cScNlEc6SWcs15DtJbrHZFxl5IezGJ3cWdOSS2DlzDl4M1ZF8dDE9kRwFeQ",
+      "delta": {
+        "patches": [
+          {
+            "action": "replace",
+            "document": {
+              "publicKeys": [
+                {
+                  "id": "newKey",
+                  "type": "EcdsaSecp256k1VerificationKey2019",
+                  "publicKeyJwk": {
+                    "kty": "EC",
+                    "crv": "secp256k1",
+                    "x": "JUWp0pAMGevNLhqq_Qmd48izuLYfO5XWpjSmy5btkjc",
+                    "y": "QYaSu1NHYnxR4qfk-RkXb4NQnQf1X3XQCpDYuibvlNc"
+                  },
+                  "purposes": [
+                    "authentication",
+                    "assertionMethod",
+                    "capabilityInvocation",
+                    "capabilityDelegation",
+                    "keyAgreement"
+                  ]
+                }
+              ],
+              "services": [
+                {
+                  "id": "serviceId123",
+                  "type": "someType",
+                  "serviceEndpoint": "https://www.url.com"
+                }
+              ]
+            }
+          }
+        ],
+        "updateCommitment": "EiD6_csybTfxELBoMgkE9O2BTCmhScG_RW_qaZQkIkJ_aQ"
+      }
+    }
+  },
+  "deactivate": {
+    "operationRequest": {
+      "type": "deactivate",
+      "didSuffix": "EiDyOQbbZAa3aiRzeCkV7LOx3SERjjH93EXoIM3UoN4oWg",
+      "revealValue": "EiB-dib5oumdaDGH47TB17Qg1nHza036bTIGibQOKFUY2A",
+      "signedData": "eyJhbGciOiJFUzI1NksifQ.eyJkaWRTdWZmaXgiOiJFaUR5T1FiYlpBYTNhaVJ6ZUNrVjdMT3gzU0VSampIOTNFWG9JTTNVb040b1dnIiwicmVjb3ZlcnlLZXkiOnsia3R5IjoiRUMiLCJjcnYiOiJzZWNwMjU2azEiLCJ4IjoiSk1ucF9KOW5BSGFkTGpJNmJfNVU3M1VwSEZqSEZTVHdtc1ZUUG9FTTVsMCIsInkiOiJ3c1QxLXN0UWJvSldPeEJyUnVINHQwVV9zX1lSQy14WXQyRkFEVUNHR2M4In19.ARTZrvupKdShOFNAJ4EWnsuaONKBgXUiwY5Ct10a9IXIp1uFsg0UyDnZGZtJT2v2bgtmYsQBmT6L9kKaaDcvUQ"
+    },
+    "deactivateOperation": {
+      "type": "deactivate",
+      "didUniqueSuffix": "EiDyOQbbZAa3aiRzeCkV7LOx3SERjjH93EXoIM3UoN4oWg",
+      "signedDataJws": {
+        "protected": "eyJhbGciOiJFUzI1NksifQ",
+        "payload": "eyJkaWRTdWZmaXgiOiJFaUR5T1FiYlpBYTNhaVJ6ZUNrVjdMT3gzU0VSampIOTNFWG9JTTNVb040b1dnIiwicmVjb3ZlcnlLZXkiOnsia3R5IjoiRUMiLCJjcnYiOiJzZWNwMjU2azEiLCJ4IjoiSk1ucF9KOW5BSGFkTGpJNmJfNVU3M1VwSEZqSEZTVHdtc1ZUUG9FTTVsMCIsInkiOiJ3c1QxLXN0UWJvSldPeEJyUnVINHQwVV9zX1lSQy14WXQyRkFEVUNHR2M4In19",
+        "signature": "ARTZrvupKdShOFNAJ4EWnsuaONKBgXUiwY5Ct10a9IXIp1uFsg0UyDnZGZtJT2v2bgtmYsQBmT6L9kKaaDcvUQ"
+      },
+      "signedData": {
+        "didSuffix": "EiDyOQbbZAa3aiRzeCkV7LOx3SERjjH93EXoIM3UoN4oWg",
+        "recoveryKey": {
+          "kty": "EC",
+          "crv": "secp256k1",
+          "x": "JMnp_J9nAHadLjI6b_5U73UpHFjHFSTwmsVTPoEM5l0",
+          "y": "wsT1-stQboJWOxBrRuH4t0U_s_YRC-xYt2FADUCGGc8"
+        }
+      }
+    }
+  }
+}
